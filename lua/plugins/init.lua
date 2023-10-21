@@ -73,6 +73,9 @@ local default_plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      { "windwp/nvim-ts-autotag", opts = {} },
+    },
     init = function()
       require("core.utils").lazy_load "nvim-treesitter"
     end,
