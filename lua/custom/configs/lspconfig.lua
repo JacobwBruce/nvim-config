@@ -73,3 +73,10 @@ lspconfig["emmet_ls"].setup {
   capabilities = capabilities,
   filetypes = {"html", "css", "scss", "sass", "javascriptreact", "less", "typescriptreact", "svelte"},
 }
+
+lspconfig.prismals.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"prisma"},
+}
+
