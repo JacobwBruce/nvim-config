@@ -122,6 +122,12 @@ local plugins = {
       require("rust-tools").setup(opts)
     end
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    opts = {}
+  },
 }
 
 return plugins
