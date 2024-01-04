@@ -63,7 +63,7 @@ local plugins = {
         "tailwindcss-language-server",
         "js-debug-adapter",
         "eslint-lsp",
-        "prettier",
+        "prettierd",
         "prisma-language-server",
         "emmet-ls",
         "html-lsp",
@@ -73,7 +73,7 @@ local plugins = {
     }
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
@@ -96,9 +96,47 @@ local plugins = {
   },
   {
     'windwp/nvim-ts-autotag',
+    ft = {
+      "html",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "xml",
+    },
     config = function()
       require('nvim-ts-autotag').setup()
     end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "bash",
+        "css",
+        "dockerfile",
+        "go",
+        "gomod",
+        "graphql",
+        "html",
+        "javascript",
+        "json",
+        "jsonc",
+        "python",
+        "rust",
+        "scss",
+        "svelte",
+        "toml",
+        "tsx",
+        "typescript",
+        "yaml",
+      }
+      return opts
+    end,
   },
   {
     "christoomey/vim-tmux-navigator",
